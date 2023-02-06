@@ -326,6 +326,23 @@ textarea {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.output-table {
+    border-collapse: collapse;
+    width: 100%;
+    color: white;
+  }
+  
+  .output-table th, .output-table td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .output-table th {
+    background-color: #dddddd;
+    color: white;
+  }
+
 @media (min-width: 810px) and (max-width: 1199px) {
     .container {
         max-width: 600px;
