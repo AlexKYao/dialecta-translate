@@ -4,7 +4,6 @@ import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 import { useState } from 'react';
 import React from 'react';
-import generateTable from './generateTable';
 
 const Home = () => {
   // Single Language Selection
@@ -47,7 +46,30 @@ const Home = () => {
     setUserInput(event.target.value);
   };
 
+  const parseTable = (input) => {
+    const rows = input.split('\n').slice(1);
+    const header = rows.shift().split('|').slice(1, 3).map(h => h.trim());
+    const data = rows.map(row => row.split('|').slice(1, 3).map(cell => cell.trim()));
   
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>{header[0]}</th>
+            <th>{header[1]}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, i) => (
+            <tr key={i}>
+              <td>{row[0]}</td>
+              <td>{row[1]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  };
 
   return (
     <div className="root">
@@ -97,7 +119,7 @@ const Home = () => {
             <div className="output-content">
               
               <div className='output-table'>
-                {generateTable(apiOutput)}
+                {parseTable(apiOutput)}
               </div>
 
               <p>{apiOutput}</p>
