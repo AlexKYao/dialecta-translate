@@ -4,7 +4,7 @@ import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 import { useState } from 'react';
 import React from 'react';
-import generateTable from './generatetable';
+import generateTable from './generateTable';
 
 const Home = () => {
   // Single Language Selection
