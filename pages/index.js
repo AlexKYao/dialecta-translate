@@ -47,10 +47,10 @@ const Home = () => {
   };
 
   const parseTable = (input) => {
-    const rows = input.split('\n').slice(1);
+    const rows = input.split('\n').slice(1).filter(row => !row.includes('-'));
     const header = rows.shift().split('|').slice(1, 3).map(h => h.trim());
-    const data = rows.map(row => row.split('|').slice(1, 3).map(cell => cell.trim()));
-  
+    const data = rows.map(row => row.split('|').slice(1, 3).map(cell => cell.trim();
+    
     return (
       <table>
         <thead>
