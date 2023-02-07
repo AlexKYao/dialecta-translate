@@ -92,6 +92,8 @@ const Home = () => {
             <option value="Spanish">Spanish</option>
             <option value="French">French</option>
             <option value="German">German</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Italian">Italian</option>
           </select>
           {/* <p>Selected Language: {selectedLanguage}</p> */}
         </div>
