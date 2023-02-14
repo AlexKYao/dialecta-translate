@@ -4,8 +4,11 @@ import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 import { useState } from 'react';
 import React from 'react';
+import { FeedbackFish } from '@feedback-fish/react'
+
 
 const Home = () => {
+  const projectId = '4f2e3d1f702689';
   // Single Language Selection
   const [selectedLanguage, setSelectedLanguage] = useState('');
   
@@ -129,6 +132,11 @@ const Home = () => {
           </div>
         )}
         </div>
+        <div className="button">
+            <FeedbackForm triggerComponent={Button}
+            projectId={projectId}
+          />
+          </div>
       </div>
     </div>
   );
